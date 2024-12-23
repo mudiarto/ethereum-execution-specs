@@ -1,0 +1,28 @@
+{%- extends 'reveal/index.html.j2' -%}
+
+
+{% block notebook_css %}
+
+{{ super() }}
+
+<style type="text/css">
+
+.reveal div.highlight > pre {
+    font-size:12px;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a').forEach(link => {
+        if (link.hostname !== window.location.hostname && link.hostname !== '') {
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer'; // Security best practice
+        }
+    });
+});
+</script>
+
+{% endblock notebook_css %}
+
+
